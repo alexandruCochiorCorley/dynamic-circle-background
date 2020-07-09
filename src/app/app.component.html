@@ -1,0 +1,32 @@
+  
+Inclinazione: <input type="number" [(ngModel)]="tilt"> ° <br>
+Sfumatura: <input type="number" [(ngModel)]="shade"> % <br>
+Heating: <input type="number" [(ngModel)]="heating" [ngClass]="{'error': ((heating + inactive + cooling) != 100)}"> % <br>
+Inactive: <input type="number" [(ngModel)]="inactive" [ngClass]="{'error': (heating + inactive + cooling) != 100}"> % <br>
+Cooling: <input type="number" [(ngModel)]="cooling" [ngClass]="{'error': (heating + inactive + cooling) != 100}"> %
+
+<div 
+  class="dynamic-background-circle"
+  [style.background]="getBackground(heating, inactive, cooling)"
+></div>
+
+<!--
+<pre>{{ components | json }}</pre>
+-->
+<pre>{{ gradientString | json }}</pre>
+
+<!--
+{{ (inactive / 4) }} <br />
+{{ (inactive / 4) + cooling }} <br />
+{{ (inactive / 4) + cooling + (inactive / 2) }} <br />
+{{ (inactive / 4) + cooling + (inactive / 2) + heating }} <br />
+
+<br>
+{{ delta + (inactive / 4) }} <br />
+{{ delta + (inactive / 4) + cooling }} <br />
+{{ delta + (inactive / 4) + cooling + (inactive / 2) }} <br />
+{{ delta + (inactive / 4) + cooling + (inactive / 2) + heating }} <br />
+
+ <br />
+{{getBackground(heating, inactive, cooling)}}
+-->

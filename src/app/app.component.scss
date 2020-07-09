@@ -1,0 +1,35 @@
+$background: white;
+
+html {
+  background: $background !important;
+}
+
+$size: 200px;
+$circle-size: 10px;
+
+.dynamic-background-circle {
+    background: blue;
+    border-radius: $size;
+    height: $size;
+    width: $size;
+
+    position: relative;
+
+    margin: 25vh auto;
+  }
+.dynamic-background-circle::after {
+    content: "";
+    position: absolute;
+    background: $background;
+    z-index: 1;
+
+    height: $size - ($circle-size * 2);
+    width: $size - ($circle-size * 2);
+    border-radius: $size - ($circle-size * 2);    
+    top: $circle-size;
+    left: $circle-size;
+}
+
+.error {
+  background-color: rgba(255, 0, 0, 0.5);
+}
