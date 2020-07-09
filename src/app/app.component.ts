@@ -34,7 +34,7 @@ export class AppComponent  {
       blocks.push({
         start: gestLastEndValue(blocks),
         end: gestLastEndValue(blocks) + (inactive / 2),
-        color: 'yellow',
+        color: 'white',
       });
     }
     if (cooling) {
@@ -48,7 +48,7 @@ export class AppComponent  {
       blocks.push({
         start: gestLastEndValue(blocks),
         end: gestLastEndValue(blocks) + (inactive / 2),
-        color: 'yellow',
+        color: 'white',
       });
     }
     if (heating) {
